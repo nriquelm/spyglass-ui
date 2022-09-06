@@ -8,6 +8,10 @@ import { HomeComponent } from './home/home.component';
 import { GoalComponent } from './goal/goal.component';
 import {MenubarModule} from 'primeng/menubar';
 import {HttpClientModule} from '@angular/common/http';
+import {DataViewModule} from 'primeng/dataview';
+import {ButtonModule} from 'primeng/button';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -21,7 +25,10 @@ import {HttpClientModule} from '@angular/common/http';
     AppRoutingModule,
     NgbModule,
     MenubarModule,
-    HttpClientModule
+    HttpClientModule,
+    DataViewModule,
+    ButtonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

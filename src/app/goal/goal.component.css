@@ -1,0 +1,39 @@
+img{
+    width: 200px;
+    height: auto; 
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    
+}
+
+.card{
+    padding: 2rem;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    margin-bottom: 2rem;
+}
+
+.goal-grid-item{
+    display: flex;
+    margin: 5em;
+    border: 1px solid #dee2e6;
+}
+.goal-grid-item-top,
+ .goal-grid-item-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+}
+
+.goal-grid-item-content{
+    text-align: center;
+    font-weight: 600;
+}
+
+.border{
+    padding: 10px;
+    margin-right: 10px;
+}
+
+button{
+    margin: 5px;
+}

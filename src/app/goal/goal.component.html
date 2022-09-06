@@ -1,5 +1,41 @@
 <div class="container">
-
-
+    <h1>Goals</h1>
+    <div >
+        <button class="btn btn-sm btn-success" (click)="open(content)"> <i class="fa fa-plus"></i>Add</button>
+    </div>
+    <div class="card">
+        <p-dataView #dv [value]="goals" [paginator]="true" [rows]="9" filterBy="name" layout="grid">
+            <ng-template let-goal pTemplate="gridItem">
+                <div class="col-12 md:col-4">
+                    <div class="goal-grid-item card">
+                        <div class="goal-grid-item-top">
+                            <div>
+                                <i class="pi pi-money-bill goal-id-icon"></i>
+                                <span class="goal-id">{{goal.goalId}}</span>
+                            </div>
+                            
+                        </div>
+                        <div class="goal-grid-item-content">
+                            <img [src]="goal.imagePath" [alt]="goal.name"/>
+                            <h2 class="goal-name">{{goal.name}}</h2>
+                            <h4 class="goal-description">{{goal.description}}</h4>
+                            <div class="goal-target-date">Target Date: {{goal.targetDate}}</div>
+                        </div>
+                        <div class="product-grid-item-bottom">
+                            
+                            <span class="goal-target-amount">Target Amount: ${{goal.targetAmount}} </span>
+                            <span class="goal-current-amount">Current Amount: ${{goal.currentAmount}} </span>
+                            <span>
+                                <button class="btn btn-sm btn-warning"> <i class="fa fa-edit"></i>Edit</button>
+                            </span>
+                            <span>
+                                <button class="btn btn-sm btn-danger"> <i class="fa fa-remove"></i>Delete</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </p-dataView>
+    </div>
 
 </div>

@@ -7,6 +7,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './home/home.component';
 import { GoalComponent } from './goal/goal.component';
 import {MenubarModule} from 'primeng/menubar';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import {MenubarModule} from 'primeng/menubar';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    MenubarModule
+    MenubarModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

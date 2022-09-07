@@ -10,8 +10,8 @@ import {MenubarModule} from 'primeng/menubar';
 import {HttpClientModule} from '@angular/common/http';
 import {DataViewModule} from 'primeng/dataview';
 import {ButtonModule} from 'primeng/button';
-import { FormsModule } from '@angular/forms';
-
+import { FormsModule, FormBuilder, FormGroup } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -28,9 +28,13 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     DataViewModule,
     ButtonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ 
+    FormBuilder
+    //FormGroup
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

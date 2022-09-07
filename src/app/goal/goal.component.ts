@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormBuilder, FormGroup } from '@angular/forms';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 
 export class Goal {
   constructor(
@@ -25,20 +26,35 @@ export class Goal {
 export class GoalComponent implements OnInit {
 
 goals!: Goal[];
+goal!: Goal;
 closeResult: String = '';
 content: any;
+editForm!: FormGroup;
+deleteId!: Number;
 
   constructor(
     private httpClient: HttpClient,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private fb: FormBuilder
   ) { }
 
   ngOnInit(): void {
     this.getGoals();
+
+    this.editForm = this.fb.group({
+      goalId: [''],
+      name: [''],
+      description: [''],
+      imagePath: [''],
+      targetDate: [''],
+      targetAmount: [''],
+      currentAmount: ['']
+    });
   }
 
+  url: string = 'http://localhost:8080/goals';
   getGoals(){
-    this.httpClient.get<any>('http://localhost:8080/goals').subscribe(
+    this.httpClient.get<any>(this.url).subscribe(
       response => {
         console.log(response);
         this.goals = response;
@@ -65,11 +81,53 @@ content: any;
   }
 
   onSubmit(f: NgForm){
-    const url = 'http://localhost:8080/goals/add';
-    this.httpClient.post(url, f.value).subscribe((result) => {
+    this.httpClient.post(this.url, f.value).subscribe((result) => {
       this.ngOnInit();
+      
     });
     this.modalService.dismissAll();
   }
+
+  onSave(){
+    const editURL = this.url + '/' + this.editForm.value.goalId;
+    this.httpClient.put(editURL, this.editForm.value).subscribe((result) => {
+      this.ngOnInit();
+      this.modalService.dismissAll();
+    });
+  }
+
+  onDelete(){
+    const deleteURL = this.url + '/' + this.editForm.value.goalId;
+    this.httpClient.delete(deleteURL).subscribe((result) => {
+      this.ngOnInit();
+      this.modalService.dismissAll();
+    })
+  }
+
+  openEdit(targetModal: any, goal: Goal){
+    this.modalService.open(targetModal, {
+      centered: true,
+      backdrop: 'static',
+      size: 'lg'
+    });
+    this.editForm.patchValue({
+      goalId: goal.goalId,
+      name: goal.name,
+      description: goal.description,
+      imagePath: goal.imagePath,
+      targetDate: goal.targetDate,
+      targetAmount: goal.targetAmount,
+      currentAmount: goal.currentAmount
+    });
+  }
+
+  openDelete(targetModal: any, goal: Goal){
+    this.deleteId = goal.goalId;
+    this.modalService.open(targetModal, {
+      backdrop: 'static',
+      size: 'lg'
+    });
+  }
+
 
 }

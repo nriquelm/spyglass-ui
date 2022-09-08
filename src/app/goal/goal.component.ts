@@ -13,9 +13,7 @@ export class Goal {
     public targetDate: String,
     public targetAmount: Number,
     public currentAmount: Number
-  ) {
-
-  }
+  ) {}
 }
 
 @Component({

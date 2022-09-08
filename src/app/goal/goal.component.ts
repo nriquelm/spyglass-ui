@@ -97,7 +97,7 @@ deleteId!: Number;
   }
 
   onDelete(){
-    const deleteURL = this.url + '/' + this.editForm.value.goalId;
+    const deleteURL = this.url + '/' + this.deleteId;
     this.httpClient.delete(deleteURL).subscribe((result) => {
       this.ngOnInit();
       this.modalService.dismissAll();

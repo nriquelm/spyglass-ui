@@ -70,6 +70,7 @@
           <h4 class="modal-title" id="modal-basic-title">New Goal</h4>
           <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
         </div>
+
         <div class="modal-body">
           <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
             <div class="form-group">
@@ -119,6 +120,7 @@
               </div>
           </form>
         </div>
+        
         <div class="modal-footer">
           <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Cancel</button>
         </div>

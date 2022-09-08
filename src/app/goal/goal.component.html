@@ -76,36 +76,37 @@
             <div class="form-group">
               <label for="name">Goal Name</label>
               <div class="input-group">
-                <input id="name" class="form-control" placeholder="Goal Name" name="name" type="text" ngModel>
+                <input id="name" class="form-control" name="name" type="text" ngModel>
               </div>
             </div>
 
             <div class="form-group">
                 <label for="description">Description</label>
                 <div class="input-group">
-                  <input id="description" class="form-control" placeholder="Description..." name="description" type="text" ngModel>
+                  <input id="description" class="form-control" name="description" type="text" ngModel>
                 </div>
               </div>
 
               <div class="form-group">
                 <label for="imagePath">Image URL</label>
                 <div class="input-group">
-                  <input id="imagePath" class="form-control" placeholder="URL" name="image" type="text" ngModel>
+                  <input id="imagePath" class="form-control" name="image" type="text" ngModel>
                 </div>
               </div>
 
               <div class="form-group">
                 <label for="targetDate">Target Date</label>
                 <div class="input-group">
-                  <input id="targetDate" class="form-control" placeholder="yyyy-mm-dd" name="targetDate" ngbDatepicker #dp="ngbDatepicker" ngModel>
+                  <input id="targetDate" class="form-control" name="targetDate" ngbDatepicker #dp="ngbDatepicker" ngModel>
                   <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
+                  <!-- <input type="text" id="targetDate" class="form-control" name="targetDate" ngModel> -->
                 </div>
               </div>
 
               <div class="form-group">
                 <label for="targetAmount">Target Amount</label>
                 <div class="input-group">
-                  <input id="targetAmount" class="form-control" placeholder="$" name="targetAmount" type="number" ngModel>
+                  <input id="targetAmount" class="form-control"  name="targetAmount" type="number" ngModel>
                 </div>
               </div>
 
@@ -120,7 +121,7 @@
               </div>
           </form>
         </div>
-        
+
         <div class="modal-footer">
           <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Cancel</button>
         </div>

@@ -10,7 +10,7 @@ export class Goal {
     public name: String,
     public description: String,
     public imagePath: String,
-    public targetDate: Date,
+    public targetDate: String,
     public targetAmount: Number,
     public currentAmount: Number
   ) {
@@ -31,12 +31,13 @@ closeResult: String = '';
 content: any;
 editForm!: FormGroup;
 deleteId!: Number;
+newGoal: Goal = new Goal(0, '', '', '', '', 0, 0);
 
   constructor(
     private httpClient: HttpClient,
     private modalService: NgbModal,
     private fb: FormBuilder
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.getGoals();
@@ -80,8 +81,8 @@ deleteId!: Number;
     }
   }
 
-  onSubmit(f: NgForm){
-    this.httpClient.post(this.url, f.value).subscribe((result) => {
+  onSubmit(newGoal: Goal){
+    this.httpClient.post(this.url, newGoal).subscribe((result) => {
       this.ngOnInit();
       
     });

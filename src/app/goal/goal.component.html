@@ -72,48 +72,48 @@
         </div>
 
         <div class="modal-body">
-          <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+          <form (ngSubmit)="onSubmit(this.newGoal)" novalidate>
             <div class="form-group">
               <label for="name">Goal Name</label>
               <div class="input-group">
-                <input id="name" class="form-control" name="name" type="text" ngModel>
+                <input [(ngModel)]="newGoal.name" id="name" class="form-control" name="name" type="text">
               </div>
             </div>
 
             <div class="form-group">
                 <label for="description">Description</label>
                 <div class="input-group">
-                  <input id="description" class="form-control" name="description" type="text" ngModel>
+                  <input [(ngModel)]="newGoal.description" id="description" class="form-control" name="description" type="text">
                 </div>
               </div>
 
               <div class="form-group">
                 <label for="imagePath">Image URL</label>
                 <div class="input-group">
-                  <input id="imagePath" class="form-control" name="image" type="text" ngModel>
+                  <input [(ngModel)]="newGoal.imagePath" id="imagePath" class="form-control" name="image" type="text">
                 </div>
               </div>
 
               <div class="form-group">
                 <label for="targetDate">Target Date</label>
                 <div class="input-group">
-                  <input id="targetDate" class="form-control" name="targetDate" ngbDatepicker #dp="ngbDatepicker" ngModel>
-                  <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
-                  <!-- <input type="text" id="targetDate" class="form-control" name="targetDate" ngModel> -->
+                  <!-- <input id="targetDate" class="form-control" name="targetDate" ngbDatepicker #dp="ngbDatepicker" ngModel>
+                  <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button> -->
+                  <input [(ngModel)]="newGoal.targetDate" type="text" id="targetDate" class="form-control" name="targetDate">
                 </div>
               </div>
 
               <div class="form-group">
                 <label for="targetAmount">Target Amount</label>
                 <div class="input-group">
-                  <input id="targetAmount" class="form-control"  name="targetAmount" type="number" ngModel>
+                  <input [(ngModel)]="newGoal.targetAmount" id="targetAmount" class="form-control"  name="targetAmount" type="number">
                 </div>
               </div>
 
               <div class="form-group">
                 <label for="currentAmount">Current Amount</label>
                 <div class="input-group">
-                  <input id="currentamount" class="form-control" placeholder="$" name="currentAmount" type="number" ngModel>
+                  <input [(ngModel)]="newGoal.currentAmount" id="currentamount" class="form-control" placeholder="$" name="currentAmount" type="number">
                 </div>
               </div>
               <div class="border text-center">

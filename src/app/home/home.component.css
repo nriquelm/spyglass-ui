@@ -1,26 +1,63 @@
 .jumbotron{
     background-color: rgba(113, 158, 42, 0.389);
+    padding: 10px;
+}
+
+a{
+    margin: 10px;
+}
+
+.logo{
+    height: 400px;
 }
 
 .home{
     background-color:  rgba(149, 184, 94, 0.408);
+    height: 100vh;
 }
 
 .flex-container{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+}
+
+.all-cards{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: olivedrab;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.intro-content{
+    display: flex;
+    margin-right: 100px;
+}
+
+.blurb{
+    margin-top: 50px;
     
-    height: max-content;
+}
+
+.more-content{
+    display: flex;
+    justify-content: center;
 }
 
 .cards{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
+    
     padding: 20px 20px 20px 20px;
 }
 
 .ppl-img{
-    height: 215px;
+    height: 238px;
     width: auto;
+}
+
+.card-title{
+    text-align: center;
 }

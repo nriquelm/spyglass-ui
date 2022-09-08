@@ -1,9 +1,13 @@
 <div class="container">
     <h1>Goals</h1>
+    <h6>Want to plan your next vacation? Save for your dream car? Buy your mom a house?
+      It all starts here. Click "New Goal" to make a new goal to work towards.
+    </h6>
     <div >
         <button class="btn btn-sm btn-success" (click)="open(content)"> 
             <i class="fa fa-plus"></i>New Goal</button>
     </div>
+  <div class="card">
     <table class="table table-bordered table-striped">
       <thead>
         <tr>
@@ -11,8 +15,8 @@
           <th>Name</th>
           <th>Description</th>
           <th>Target Date</th>
-          <th>Target Amount</th>
           <th>Current Amount</th>
+          <th>Target Amount</th>
         </tr>
       </thead>
       <tbody>
@@ -21,54 +25,27 @@
           <td>{{goal.name}}</td>
           <td>{{goal.description}}</td>
           <td>{{goal.targetDate}}</td>
-          <td>{{goal.targetAmount}}</td>
           <td>{{goal.currentAmount}}</td>
+          <td>{{goal.targetAmount}}</td>
           <td>
             <button class="btn btn-sm btn-warning" (click)="openEdit(contentEdit, goal)"> <i class="fa fa-edit"></i>Edit</button>
             <button class="btn btn-sm btn-danger" (click)="openDelete(contentDelete, goal)"> <i class="fa fa-remove"></i>Delete</button>
           </td>
-          <!-- <td>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow={{goal.currentAmount}} aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </td> -->
         </tr>
       </tbody>
     </table>
-    <!-- <div class="card">
-        <p-dataView #dv [value]="goals" [paginator]="true" [rows]="9" filterBy="name" layout="grid">
-            <ng-template let-goal pTemplate="gridItem">
-                <div class="col-12 md:col-4">
-                    <div class="goal-grid-item card">
-                        <div class="goal-grid-item-top">
-                            <div>
-                                <i class="pi pi-money-bill goal-id-icon"></i>
-                                <span class="goal-id">{{goal.goalId}}</span>
-                            </div>
-                            
-                        </div>
-                        <div class="goal-grid-item-content">
-                            <img [src]="goal.imagePath" [alt]="goal.name"/>
-                            <h2 class="goal-name">{{goal.name}}</h2>
-                            <h4 class="goal-description">{{goal.description}}</h4>
-                            <div class="goal-target-date">Target Date: {{goal.targetDate}}</div>
-                        </div>
-                        <div class="product-grid-item-bottom">
-                            
-                            <span class="goal-target-amount">Target Amount: ${{goal.targetAmount}} </span>
-                            <span class="goal-current-amount">Current Amount: ${{goal.currentAmount}} </span>
-                            <span>
-                                <button class="btn btn-sm btn-warning"> <i class="fa fa-edit"></i>Edit</button>
-                            </span>
-                            <span>
-                                <button class="btn btn-sm btn-danger"> <i class="fa fa-remove"></i>Delete</button>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </ng-template>
-        </p-dataView>
-    </div> -->
+  </div>
+
+  <div class="flexin">
+    <div class="goal-blurb">
+        <h3>Looking Ahead- Financial Freedom</h3>
+        <p>When it comes to financial freedom, you get to set the terms. What do you want your lifestyle to look like?
+          What do you need to make that possible? What are the deadlines you've set for yourself? Be clear, be intentional, be focused.
+          You have the power to not only reach, but exceed your goals, and SpyGlass is always happy to help you on your journey.
+        </p>
+    </div>
+    <img class="spyglass-logo" src="/assets/images/spyglasslogo.png" alt="">
+  </div>
 
     <ng-template #content let-modal>
         <div class="modal-header">

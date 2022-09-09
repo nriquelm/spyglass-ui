@@ -34,7 +34,6 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   providers: [ 
     FormBuilder
-    //FormGroup
   ],
   bootstrap: [AppComponent]
 })

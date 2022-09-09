@@ -7,45 +7,47 @@
         <button class="btn btn-sm btn-success" (click)="open(content)"> 
             <i class="fa fa-plus"></i>New Goal</button>
     </div>
-  <div class="card">
-    <table class="table table-bordered table-striped">
-      <thead>
-        <tr>
-          <th>Image</th>
-          <th>Name</th>
-          <th>Description</th>
-          <th>Target Date</th>
-          <th>Current Amount</th>
-          <th>Target Amount</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let goal of goals">
-          <td><img [src]="goal.imagePath" [alt]="goal.name"/></td>
-          <td>{{goal.name}}</td>
-          <td>{{goal.description}}</td>
-          <td>{{goal.targetDate}}</td>
-          <td>{{goal.currentAmount}}</td>
-          <td>{{goal.targetAmount}}</td>
-          <td>
-            <button class="btn btn-sm btn-warning" (click)="openEdit(contentEdit, goal)"> <i class="fa fa-edit"></i>Edit</button>
-            <button class="btn btn-sm btn-danger" (click)="openDelete(contentDelete, goal)"> <i class="fa fa-remove"></i>Delete</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="flexin">
-    <div class="goal-blurb">
-        <h3>Looking Ahead- Financial Freedom</h3>
-        <p>When it comes to financial freedom, you get to set the terms. What do you want your lifestyle to look like?
-          What do you need to make that possible? What are the deadlines you've set for yourself? Be clear, be intentional, be focused.
-          You have the power to not only reach, but exceed your goals, and SpyGlass is always happy to help you on your journey.
-        </p>
+    <div class="card">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Target Date</th>
+            <th>Current Amount</th>
+            <th>Target Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let goal of goals">
+            <td><img [src]="goal.imagePath" [alt]="goal.name"/></td>
+            <td>{{goal.name}}</td>
+            <td>{{goal.description}}</td>
+            <td>{{goal.targetDate}}</td>
+            <td>{{goal.currentAmount}}</td>
+            <td>{{goal.targetAmount}}</td>
+            <td>
+              <button class="btn btn-sm btn-warning" (click)="openEdit(contentEdit, goal)"> <i class="fa fa-edit"></i>Edit</button>
+              <button class="btn btn-sm btn-danger" (click)="openDelete(contentDelete, goal)"> <i class="fa fa-remove"></i>Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <img class="spyglass-logo" src="/assets/images/spyglasslogo.png" alt="">
-  </div>
+
+    <div class="flexin">
+      <div class="goal-blurb">
+          <h3>Looking Ahead- Financial Freedom</h3>
+          <p>When it comes to financial freedom, you get to set the terms. What do you want your lifestyle to look like?
+            What do you need to make that possible? What are the deadlines you've set for yourself? Be clear, be intentional, be focused.
+            You have the power to not only reach, but exceed your goals, and SpyGlass is always happy to help you on your journey.
+          </p>
+      </div>
+      <img class="spyglass-logo" src="/assets/images/spyglasslogo.png" alt="">
+    </div>
+
+
 
     <ng-template #content let-modal>
         <div class="modal-header">
@@ -79,8 +81,6 @@
               <div class="form-group">
                 <label for="targetDate">Target Date</label>
                 <div class="input-group">
-                  <!-- <input id="targetDate" class="form-control" name="targetDate" ngbDatepicker #dp="ngbDatepicker" ngModel>
-                  <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button> -->
                   <input [(ngModel)]="newGoal.targetDate" type="text" id="targetDate" class="form-control" name="targetDate">
                 </div>
               </div>
